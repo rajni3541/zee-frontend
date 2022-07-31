@@ -11,6 +11,13 @@ import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import axios from "axios";
+// import { useEffect, useState } from "react";
+
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "hsl(300, 100%, 90%)",
@@ -27,9 +34,21 @@ const MovieCard = ({ title, movie_code, release_date, id }) => {
     return date.split(" ", 5);
   };
 
+  
+
+
+    const deleteMovie = (id) => {
+      axios.delete(`http://localhost:8000/zee5/user/deleteMovie/${id}`)
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
+    }
+
+  
+
   return (
     <>
       <Grid
+      
             style={{maxWidth: '80%', marginInline: 'auto',marginBottom: '20px', background: 'hsl(300, 100%, 75%)'}}
       >
         <Grid>
@@ -49,6 +68,21 @@ const MovieCard = ({ title, movie_code, release_date, id }) => {
             >
               <VisibilityIcon />
             </Button>
+            <Button  className="delete_btn">
+              <DeleteIcon
+              onClick={() => {
+                deleteMovie(id)
+              }}
+              />
+            </Button>
+            <Button  className="edit_btn">
+              <EditIcon
+              onClick={() => {
+                navigate(`/updateMovie/${id}`);
+              }}
+              />
+            </Button>
+            
           </Item>
         </Grid> 
     </Grid>   
