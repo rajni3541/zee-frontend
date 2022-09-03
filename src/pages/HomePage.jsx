@@ -125,6 +125,9 @@ const HomePage = ( ) => {
             </Select>
           </FormControl>
           <Button style={{ background: 'purple', color: 'white', fontWeight: 'bold' }}>Filter</Button>
+          <Button onClick={() => navigate('/import-excel')} style={{ background: 'purple', color: 'white', fontWeight: 'bold', marginLeft: '1rem' }}>Import Excel</Button>
+
+         
         </div>
         {input.length !== 0 ? input.map((movies, index) => (
           <MovieCard

@@ -40,35 +40,7 @@ const navigate = useNavigate();
         })
     }
 
-    // useEffect(() => {
-    //     loadUser();
     
-    // }, []);
-     
-
-// const loadUser = async () =>{
-//     const result = await axios.get(`http://localhost:8000/zee5/user/updateMovie/${id}`)
-//     setData(result.data)
-     
-// }
-
-   
-
-    // function handleClick(event) {
-    //     event.preventDefault();
-    //     //console.log(data)
-    //     const newData = {
-    //         movie_id: data.movie_id,
-    //         title: data.title,
-    //         release_date: data.release_date,
-    //         director: data.director,
-    //         producer: data.producer,
-    //         actors: data.actors,
-    //         audio_language: data.audio_language
-    //     }
-    //     axios.put(`http://localhost:8000/zee5/user/updateMovie/${id}`, newData)
-    //     alert("updated successfully")
-    // }
     return (
         // marginTop: "50px"
         // <Card style={{ maxWidth: 500, padding: "20px 10px", margin: "auto" }}>

@@ -10,8 +10,6 @@ const AddItems = () => {
     const navigate = useNavigate();
     const [data, setData] = useState({
         movie_id: '',
-
-    
         title: "",
         release_date: "",
         director: "",
